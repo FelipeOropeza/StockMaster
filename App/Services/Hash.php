@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Services;
+use App\DAO\HashDAO;
 
-class PasswordHash
+class Hash
 {
     public $senha;
 
     public function criptografa($senha)
     {
-
+        
     }
 }
