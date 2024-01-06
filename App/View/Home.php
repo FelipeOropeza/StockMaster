@@ -1,3 +1,5 @@
+<title>Home</title>
+
 <?php
      $id = $_SESSION['id'];
      $nome = $_SESSION['nome'];

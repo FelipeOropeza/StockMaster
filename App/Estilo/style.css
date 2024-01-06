@@ -6,3 +6,11 @@
     text-align: center;
     padding: 10px 0;
 }
+
+#alinhamento{
+    margin-right: 80px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
