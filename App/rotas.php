@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\HomeController;
 use App\Controller\LoginController;
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
@@ -9,8 +10,12 @@ switch ($url) {
         LoginController::login();
         break;
 
+    case 'logout':
+        LoginController::logout();
+        break;
+
     case 'home':
-        echo "Página home";
+        HomeController::index();
         break;
 
     default:
