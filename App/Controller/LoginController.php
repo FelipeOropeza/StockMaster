@@ -8,7 +8,7 @@ class LoginController extends Controller
     public static function login()
     {
         if(empty($_POST["email"]) || empty($_POST["senha"])) {
-            parent::reader('Login');
+            parent::reader('Login', 1);
         }else{
             $model = new LoginModel();
             $model->Email = $_POST['email'];

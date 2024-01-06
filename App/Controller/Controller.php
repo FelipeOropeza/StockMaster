@@ -4,11 +4,18 @@ namespace App\Controller;
 
 abstract class Controller
 {
-    protected static function reader($view, $dados = array(), $model = null)
+    protected static function reader($view , $layout = 0, $dados = array(), $model = null)
     {
         $arquivo_view = VIEWS . $view . ".php";
 
-        if(file_exists($arquivo_view)) 
+        if(file_exists($arquivo_view) && $layout == 0)
+        {
+            extract($dados);
+            include 'Estrutura/nav.php';
+            include $arquivo_view;
+            include 'Estrutura/rodape.php';
+        }
+        elseif(file_exists($arquivo_view) && $layout == 1)
         {
             extract($dados);
             include $arquivo_view;
