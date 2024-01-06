@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Services;
 
-class Hash
+class PasswordHash
 {
     public $senha;
 

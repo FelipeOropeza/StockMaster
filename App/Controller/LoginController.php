@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use App\Model\LoginModel;
+use App\Services\Session;
 
 class LoginController extends Controller
 {
@@ -14,23 +15,16 @@ class LoginController extends Controller
             $model->Email = $_POST['email'];
             $model->Senha = $_POST['senha'];
 
-            $result = $model->autenticar(); 
-
-            session_start();
-            $_SESSION['id'] = $result->Id_Login;
-            $_SESSION['nome'] = $result->Nome;
-            $_SESSION['email'] = $result->Email;
-            $_SESSION['senha'] = $result->Senha;
-            $_SESSION['acesso'] = $result->Acesso;
+            $result = $model->autenticar();
+            Session::criarSession($result);
 
             header('Location: /StockMaster/App/home');
         }
     }
 
     public static function logout()
-    {
-        session_start();
-        session_destroy();
+    {   
+        Session::destroy();
         header('Location: /StockMaster/App/');
     }
 }

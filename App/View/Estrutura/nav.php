@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link href="Estilo/style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
@@ -29,7 +29,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg> &nbsp;<?php echo $_SESSION['nome'] ?>
         </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Minha Conta</a></li>
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
             <li><a class="dropdown-item" href="logout">Sair</a></li>
         </ul>
     </li>
@@ -40,7 +40,7 @@
             Administrador
         </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Minha Conta</a></li>
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
             <li><a class="dropdown-item" href="logout">Sair</a></li>
         </ul>
     </li>

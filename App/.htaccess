@@ -1,5 +1,27 @@
-RewriteEngine On
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "rotas.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "autoload.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^Services/ - [F]
+    RewriteRule ^Controller/ - [F]
+    RewriteRule ^DAO/ - [F]
+    RewriteRule ^Model/ - [F]
+    RewriteRule ^View/ - [F]
+
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>

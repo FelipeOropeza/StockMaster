@@ -11,9 +11,9 @@ abstract class Controller
         if(file_exists($arquivo_view) && $layout == 0)
         {
             extract($dados);
-            include 'Estrutura/nav.php';
+            include 'View/Estrutura/nav.php';
             include $arquivo_view;
-            include 'Estrutura/rodape.php';
+            include 'View/Estrutura/rodape.php';
         }
         elseif(file_exists($arquivo_view) && $layout == 1)
         {
