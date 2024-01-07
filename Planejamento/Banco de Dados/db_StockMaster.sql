@@ -98,6 +98,4 @@ begin
     end if;
 end$$
 
-call spInsertLogin('Admin', 'Admin@gmail', '12345', 1);
-
 select * from tbl_login;
