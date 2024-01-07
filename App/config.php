@@ -1,6 +1,6 @@
 <?php
 
-define('BASEDIR', dirname(__FILE__) . '/../');   
+define('BASEDIR', dirname(__FILE__) . '/../');
 define('VIEWS', dirname(__FILE__) . '/View/');
 
 $_ENV['db']['host'] = 'localhost';

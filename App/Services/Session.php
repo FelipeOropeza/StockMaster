@@ -5,8 +5,9 @@ namespace App\Services;
 
 class Session
 {
-    
-    public static function criarSession($dadosLogin) {
+
+    public static function criarSession($dadosLogin)
+    {
         session_start();
         $_SESSION['id'] = $dadosLogin->Id_Login;
         $_SESSION['nome'] = $dadosLogin->Nome;
@@ -15,11 +16,12 @@ class Session
         $_SESSION['acesso'] = $dadosLogin->Acesso;
     }
 
-    public static function start() 
+    public static function start()
     {
         session_start();
     }
-    public static function destroy() {
+    public static function destroy()
+    {
         session_start();
         session_destroy();
     }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Model;
+
 use App\DAO\LoginDAO;
 
 class LoginModel
@@ -21,7 +22,7 @@ class LoginModel
         $dao = new LoginDAO();
 
         $obj = $dao->selecLogin($this->Email);
-        if($obj == ''){
+        if ($obj == '') {
             $dao->insertLogin($this->Nome, $this->Email, $this->Senha, $this->Acesso);
         }
     }
