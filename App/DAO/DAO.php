@@ -4,11 +4,11 @@ namespace App\DAO;
 
 use \PDO;
 
-abstract class DAO 
+abstract class DAO
 {
     protected $conexao;
 
-    public function __construct() 
+    public function __construct()
     {
         $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['database'];
 

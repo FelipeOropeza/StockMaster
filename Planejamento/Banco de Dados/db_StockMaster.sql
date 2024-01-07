@@ -7,7 +7,7 @@ Id_login int primary key auto_increment,
 Nome varchar(50) not null,
 Email varchar(200) not null,
 Senha varchar(200) not null,
-Acesso boolean
+Acesso boolean default 0
 );
 
 create table tbl_produto(
@@ -84,7 +84,20 @@ Id_login int,
 foreign key (Id_login) references tbl_login (Id_login)
 );
 
-insert into tbl_login values(default, 'Felipe', 'felipe@gmail', '12345', 1);
+-- insert into tbl_login values(default, 'Admin', 'Admin@gmail', '12345', 1);
+
 -- insert into tbl_login values(default, 'Alex', 'alex@gmail', '12345', 0);
+
+delimiter $$
+create procedure spInsertLogin(vNome varchar(50), vEmail varchar(200), vSenha varchar(200), vAcesso boolean)
+begin
+	if not exists(select Email from tbl_login where Email = vEmail) then
+		insert into tbl_login values(default, vNome, vEmail, vSenha, vAcesso);
+	else
+		select 'Email já existe';
+    end if;
+end$$
+
+call spInsertLogin('Admin', 'Admin@gmail', '12345', 1);
 
 select * from tbl_login;

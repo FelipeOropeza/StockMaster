@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Services;
-use App\DAO\HashDAO;
 
 class Hash
 {
-    public $senha;
-
-    public function criptografa($senha)
+    public static function criptografaPassword($senha)
     {
-        
+        $passCrypt = password_hash($senha, PASSWORD_BCRYPT);
+    
+        return $passCrypt;
+    }
+
+    public static function verificaPassword($senha, $passCrypt) 
+    {
+        return password_verify($senha, $passCrypt);
     }
 }
