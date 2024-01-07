@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\ProdutoModel;
 use App\Services\Session;
 
 class HomeController extends Controller
@@ -13,6 +14,9 @@ class HomeController extends Controller
             header('Location: /StockMaster/App/');
         }
 
-        parent::reader('Home');
+        $model = new ProdutoModel();
+        $model->listaProduto();
+
+        parent::reader('Home', 0, $model);
     }
 }

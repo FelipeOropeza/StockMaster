@@ -4,7 +4,7 @@ namespace App\Controller;
 
 abstract class Controller
 {
-    protected static function reader($view, $layout = 0, $dados = array(), $model = null)
+    protected static function reader($view, $layout = 0, $model = null, $dados = array())
     {
         $arquivo_view = VIEWS . $view . ".php";
 
