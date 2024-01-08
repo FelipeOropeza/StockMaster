@@ -11,7 +11,7 @@ class LoginController extends Controller
     public static function login()
     {
         if (empty($_POST["email"]) || empty($_POST["senha"])) {
-            parent::reader('Login', 1);
+            parent::reader('Login/Login', 1);
         } else {
             $model = new LoginModel();
             $model->Email = $_POST['email'];
@@ -21,7 +21,7 @@ class LoginController extends Controller
             $result = $model->autenticar();
             if ($result && Hash::verificaPassword($senha, $result->Senha)) {
                 Session::criarSession($result);
-                header('Location: /StockMaster/App/home');
+                header('Location: /StockMaster/App/home/index');
             } else {
                 echo 'senha invalida';
             }

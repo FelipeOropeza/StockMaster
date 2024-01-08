@@ -17,6 +17,6 @@ class HomeController extends Controller
         $model = new ProdutoModel();
         $model->listaProduto();
 
-        parent::reader('Home', 0, $model);
+        parent::reader('Home/Home', 0, $model);
     }
 }
