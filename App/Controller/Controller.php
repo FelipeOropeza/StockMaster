@@ -10,9 +10,9 @@ abstract class Controller
 
         if (file_exists($arquivo_view) && $layout == 0) {
             extract($dados);
-            include 'View/Estrutura/nav.php';
+            include 'View/Template/nav.php';
             include $arquivo_view;
-            include 'View/Estrutura/rodape.php';
+            include 'View/Template/rodape.php';
         } elseif (file_exists($arquivo_view) && $layout == 1) {
             extract($dados);
             include $arquivo_view;

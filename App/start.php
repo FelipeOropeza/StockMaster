@@ -11,6 +11,3 @@ $modelLogin->Senha = Hash::criptografaPassword('admin12345');
 $modelLogin->Acesso = 1;
 
 $modelLogin->cadastroLogin();
-
-
-

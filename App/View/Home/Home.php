@@ -19,7 +19,7 @@
                     <h5>Quantidade: <?= $items->Qtd ?></h5>
                 </div>
                 <div class="text" style="margin-top:5px; margin-bottom:5px;">
-                    <a class="btn btn-xl btn-block btn-primary" href="<?php echo url('produto', 'detalhes');?>?cd=<?= $items->CodigoBarras ?>" role="button">Detalhes</a>
+                    <a class="btn btn-xl btn-block btn-primary" href="<?php echo url('produto', 'detalhes'); ?>?cd=<?= $items->CodigoBarras ?>" role="button">Detalhes</a>
                 </div>
             </div>
         <?php endforeach; ?>
