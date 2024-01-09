@@ -9,9 +9,11 @@ class ProdutoController extends Controller
 {
     public static function detalhes()
     {
+        parent::authentic();
         Session::start();
+        
         $model = new ProdutoModel();
-        $model->getById($_GET['cd']);
+        $model = $model->getById($_GET['cd']);
 
         parent::reader('Produto/Detalhes', 0, $model);
     }

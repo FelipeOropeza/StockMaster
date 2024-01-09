@@ -22,4 +22,11 @@ abstract class Controller
             exit('Arquivo da View não encontrado. Arquivo: ' . $arquivo_view);
         }
     }
+
+    protected static function authentic()
+    {
+        if (empty($_SESSION['id'])) {
+           return header('Location: /StockMaster/App/');
+        }
+    }
 }

@@ -23,7 +23,7 @@ class ProdutoDAO extends DAO
 
     public function selectById($id)
     {
-        $sql = "SELECT * FROM tbl_produto WHERE CodigoBarras = ?";
+        $sql = "SELECT CodigoBarras, Nome, ValorUnitario, Qtd FROM tbl_produto WHERE CodigoBarras = ?";
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();

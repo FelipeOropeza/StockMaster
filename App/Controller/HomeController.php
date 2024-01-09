@@ -9,10 +9,8 @@ class HomeController extends Controller
 {
     public static function index()
     {
+        parent::authentic();
         Session::start();
-        if (empty($_SESSION['id'])) {
-            header('Location: /StockMaster/App/');
-        }
 
         $model = new ProdutoModel();
         $model->listaProduto();
