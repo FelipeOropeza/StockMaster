@@ -14,4 +14,13 @@ class ProdutoModel extends Model
 
         $this->rows = $dao->selectProd();
     }
+
+    public function getById($id)
+    {
+        $dao = new ProdutoDAO();
+
+        $obj = $dao->selectById($id);
+
+        return ($obj) ? $obj : new ProdutoModel;
+    }
 }

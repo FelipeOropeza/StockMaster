@@ -20,4 +20,14 @@ class ProdutoDAO extends DAO
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
+
+    public function selectById($id)
+    {
+        $sql = "SELECT * FROM tbl_produto WHERE CodigoBarras = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("App\Model\ProdutoModel");
+    }
 }

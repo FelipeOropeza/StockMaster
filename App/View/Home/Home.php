@@ -1,4 +1,4 @@
-<title>Home</title>
+<title><?= $titulo_view ?></title>
 
 <br>
 <div class="container-fluid">

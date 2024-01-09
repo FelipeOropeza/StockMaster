@@ -7,6 +7,8 @@ abstract class Controller
     protected static function reader($view, $layout = 0, $model = null, $dados = array())
     {
         $arquivo_view = VIEWS . $view . ".php";
+        $partes = explode("/", $view);
+        $titulo_view = $partes[1];
 
         if (file_exists($arquivo_view) && $layout == 0) {
             extract($dados);

@@ -104,3 +104,5 @@ insert into tbl_produto values (12345, 'Teste1', 12.00, 12);
 insert into tbl_produto values (12346, 'Teste2', 13.00, 22);
 insert into tbl_produto values (12347, 'Teste3', 14.00, 15);
 insert into tbl_produto values (12348, 'Teste4', 15.00, 32);
+insert into tbl_produto values (12349, 'Teste5', 22.00, 30);
+insert into tbl_produto values (12350, 'Teste6', 32.00, 36);
