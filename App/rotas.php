@@ -3,6 +3,7 @@
 use App\Controller\HomeController;
 use App\Controller\LoginController;
 use App\Controller\ProdutoController;
+use App\Controller\RelatorioController;
 
 include 'Services/Utils.php';
 
@@ -26,6 +27,9 @@ switch ($url) {
         ProdutoController::detalhes();
         break;
 
+    case 'relatorio/enviar':
+        RelatorioController::enviar();
+        break;
     default:
         echo "Erro 404 - Página não encontrada";
         break;

@@ -9,8 +9,8 @@ class ProdutoController extends Controller
 {
     public static function detalhes()
     {
-        parent::authentic();
         Session::start();
+        parent::authentic();
         
         $model = new ProdutoModel();
         $model = $model->getById($_GET['cd']);

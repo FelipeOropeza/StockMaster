@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public static function index()
     {
-        parent::authentic();
         Session::start();
+        parent::authentic();
 
         $model = new ProdutoModel();
         $model->listaProduto();
