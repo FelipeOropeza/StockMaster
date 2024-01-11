@@ -2,6 +2,7 @@
 
 use App\Controller\HomeController;
 use App\Controller\LoginController;
+use App\Controller\PerfilController;
 use App\Controller\ProdutoController;
 use App\Controller\RelatorioController;
 
@@ -21,6 +22,10 @@ switch ($url) {
 
     case 'home/index':
         HomeController::index();
+        break;
+
+    case 'perfil/perfil':
+        PerfilController::perfil();
         break;
 
     case 'produto/detalhes':

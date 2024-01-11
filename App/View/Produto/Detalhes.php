@@ -25,9 +25,9 @@
                 </div>
                 <div class="estoque">
                     <h4><b>Situação do estoque:</b></h4>
-                    <?php if ($model->Qtd < 40 and $model->Qtd > 30) { ?>
+                    <?php if ($model->Qtd <= 40 and $model->Qtd >= 30) { ?>
                         <p class="text-success">Normal</p>
-                    <?php } elseif ($model->Qtd < 30 and $model->Qtd > 20) { ?>
+                    <?php } elseif ($model->Qtd <= 30 and $model->Qtd >= 20) { ?>
                         <p class="text-warning">Moderada</p>
                     <?php } else { ?>
                         <p class="text-danger">Perigo</p>

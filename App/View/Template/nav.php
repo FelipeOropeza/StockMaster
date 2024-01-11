@@ -33,8 +33,8 @@
                   </svg> &nbsp;<?php echo $_SESSION['nome'] ?>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Perfil</a></li>
-                  <li><a class="dropdown-item" href="logout">Sair</a></li>
+                  <li><a class="dropdown-item" href="<?php echo url('perfil', 'perfil') ?>">Perfil</a></li>
+                  <li><a class="dropdown-item" href="<?php echo url('login', 'logout') ?>">Sair</a></li>
                 </ul>
               </li>
           </ul>
@@ -44,7 +44,7 @@
               Administrador
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="<?php echo url('perfil', 'perfil') ?>">Perfil</a></li>
               <li><a class="dropdown-item" href="<?php echo url('login', 'logout') ?>">Sair</a></li>
             </ul>
           </li>

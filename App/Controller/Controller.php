@@ -29,4 +29,21 @@ abstract class Controller
            return header('Location: /StockMaster/App/');
         }
     }
+
+    protected static function funcoes($funcao, $model = null)
+    {
+        $arquivo_view = VIEWS . $funcao . ".php";
+
+        ob_start();
+
+        if (file_exists($arquivo_view)) {
+            include $arquivo_view; 
+        } else {
+            echo "Arquivo não encontrado: $arquivo_view";
+        }
+    
+        $conteudo = ob_get_clean();
+    
+        return $conteudo;
+    }
 }
