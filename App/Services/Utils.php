@@ -13,3 +13,9 @@ if (!function_exists('url')) {
     return $url;
   }
 }
+
+function validaFunc($acesso) {
+  if($acesso == 0){
+    header('Location: /StockMaster/App/perfil/index');
+  }
+}

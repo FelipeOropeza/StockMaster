@@ -78,7 +78,7 @@ foreign key (NumeroVenda) references tbl_vendas (NumeroVenda)
 create table tbl_relatorio(
 Id_rela bigint primary key auto_increment,
 Titulo varchar(50) not null,
-Messagem text not null,
+Mensagem text not null,
 Data_rela date,
 Id_login int,
 foreign key (Id_login) references tbl_login (Id_login)
@@ -106,3 +106,14 @@ insert into tbl_produto values (12347, 'Teste3', 14.00, 15);
 insert into tbl_produto values (12348, 'Teste4', 15.00, 32);
 insert into tbl_produto values (12349, 'Teste5', 22.00, 30);
 insert into tbl_produto values (12350, 'Teste6', 32.00, 36);
+
+delimiter $$
+create procedure spInsertRela(vTitulo varchar(50), vMensagem text, vId_Login int)
+begin
+	set @Data_rela = current_date();
+	insert into tbl_relatorio values(default, vTitulo, vMensagem, @Data_rela, vId_Login);
+end$$
+
+call spInsertRela();
+
+select * from tbl_relatorio;

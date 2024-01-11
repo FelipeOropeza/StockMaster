@@ -30,13 +30,14 @@ abstract class Controller
         }
     }
 
-    protected static function funcoes($funcao, $model = null)
+    protected static function funcoes($funcao, $model = null, $dados = array())
     {
         $arquivo_view = VIEWS . $funcao . ".php";
 
         ob_start();
 
         if (file_exists($arquivo_view)) {
+            extract($dados);
             include $arquivo_view; 
         } else {
             echo "Arquivo não encontrado: $arquivo_view";

@@ -24,8 +24,12 @@ switch ($url) {
         HomeController::index();
         break;
 
-    case 'perfil/perfil':
-        PerfilController::perfil();
+    case 'perfil/index':
+        PerfilController::index();
+        break;
+
+    case 'perfil/index/save':
+        PerfilController::save();
         break;
 
     case 'produto/detalhes':
