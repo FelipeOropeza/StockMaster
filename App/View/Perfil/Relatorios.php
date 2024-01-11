@@ -1,6 +1,18 @@
-<h2>Relatorio</h2>
-<?php foreach ($model->rows as $items) : ?>
-<h2><?= $items->Titulo ?></h2>
-<h2><?= $items->Mensagem ?></h2>
-<h2><?= $items->Data_rela ?></h2>
-<?php endforeach; ?>
+<h2>Relatorios</h2>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th>Titulo</th>
+            <th>Mensagem</th>
+            <th>Data</th>
+        </tr>
+        <?php foreach ($model->rows as $items) : ?>
+        <tr>
+            <td><?= $items->Titulo ?></td>
+            <td><?php echo mb_strimwidth($items->Mensagem, 0, 80, '...'); ?></td>
+            <td><?php echo date("d/m/Y", strtotime($items->Data_rela)) ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

@@ -126,10 +126,13 @@ button:hover {
 }
 
 .div2 {
-  background-color: lightgreen;
   padding: 10px;
   margin-left: 30px;
   height: 550px;
   width: 70%;
   margin-bottom: 85px;
+}
+
+.div2 h2{
+  text-align: center;
 }
