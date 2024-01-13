@@ -9,7 +9,10 @@ use App\Services\Hash;
 class LoginController extends Controller
 {
     public static function login()
-    {
+    {   
+        if(empty($_SESSION['id'])){
+            Session::destroy();
+        }
         if (empty($_POST["email"]) || empty($_POST["senha"])) {
             parent::reader('Login/Login', 1);
         } else {

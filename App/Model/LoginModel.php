@@ -26,4 +26,13 @@ class LoginModel
             $dao->insertLogin($this->Nome, $this->Email, $this->Senha, $this->Acesso);
         }
     }
+
+    public function getById()
+    {
+        $dao = new LoginDAO();
+
+        $obj = $dao->selecById($this->Id_Login);
+
+        return ($obj) ? $obj : new LoginModel;
+    }
 }

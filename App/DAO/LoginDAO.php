@@ -32,4 +32,14 @@ class LoginDAO extends DAO
         $stmt->bindValue(4, $acesso);
         $stmt->execute();
     }
+
+    public function selecById($id)
+    {
+        $sql = "SELECT Id_Login, Nome, Email, Senha, Acesso FROM tbl_login WHERE Id_Login = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("App\Model\LoginModel");
+    }
 }

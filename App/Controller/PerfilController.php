@@ -16,9 +16,13 @@ class PerfilController extends Controller
         parent::authentic();
 
         $acesso = $_SESSION['acesso'];
+        $id = $_SESSION['id'];
 
         if (empty($_GET['arq'])) {
-            parent::reader('Perfil/Perfil', 0, null, ['acesso' => $acesso]);
+            $model = new LoginModel();
+            $model->Id_Login = $id;
+            $model = $model->getById();
+            parent::reader('Perfil/Perfil', 0, $model, ['acesso' => $acesso]);
         } else {
             $model = new RelatorioModel();
             $model->listaRela();
