@@ -119,10 +119,21 @@ button:hover {
 }
 
 .div1 {
-  background-color: lightblue;
   height: 550px;
   width: 200px;
   margin-left: 50px;
+}
+
+.div1 ul, summary{
+  list-style: none;
+}
+
+.div1 a{
+  text-decoration: none;
+}
+
+.div1 ul{
+  padding: 9px;
 }
 
 .div2 {

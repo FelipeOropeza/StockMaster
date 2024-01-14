@@ -2,17 +2,29 @@
 <br>
 <div class="perfil">
     <div class="div1">
-        <a href="<?php echo url('perfil', 'index'); ?>?arq=Forneces">Consultar Fornecedores</a>
-        <br>
-        <?php if ($acesso == 1) { ?>
-            <a href="<?php echo url('perfil', 'index'); ?>?arq=Relatorios">Consultar Relatorios</a>
-            <br>
-            <a href="<?php echo url('perfil', 'index'); ?>?arq=FormFunc">Cadastro Funcionario</a>
-        <?php } else {  ?>
-            <a href="<?php echo url('perfil', 'index'); ?>?arq=FormRela">Enviar Relatorio</a>
-        <?php } ?>
-        <br>
-        <a href="<?php echo url('perfil', 'index'); ?>?arq=FormFone">Cadastro Fornecedores</a>
+        <details>
+            <summary>Minha Conta</summary>
+            <ul>
+                <a href="<?php echo url('perfil', 'index'); ?>">Perfil</a>
+            </ul>
+        </details>
+        <details>
+            <summary>Funçoes Sistema</summary>
+            <ul>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=Forneces">Consultar Fornecedores</a>
+                <br>
+                <?php if ($acesso == 1) { ?>
+                    <a href="<?php echo url('perfil', 'index'); ?>?arq=Relatorios">Consultar Relatorios</a>
+                    <br>
+                    <a href="<?php echo url('perfil', 'index'); ?>?arq=FormFunc">Cadastro Funcionario</a>
+                <?php } else {  ?>
+                    <a href="<?php echo url('perfil', 'index'); ?>?arq=FormRela">Enviar Relatorio</a>
+                <?php } ?>
+                <br>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=FormFone">Cadastro Fornecedores</a>
+            </ul>
+        </details>
+
     </div>
     <?php if (empty($funcao)) { ?>
         <div class="div2">
