@@ -51,7 +51,7 @@ class PerfilController extends Controller
                     break;
 
                 default:
-                    header('Location: /pagina_padrao');
+                    echo "Erro 404 - Página não encontrada";
                     exit();
             }
             parent::reader('Perfil/Perfil', 0, null, ['funcao' => $funcao, 'acesso' => $acesso]);

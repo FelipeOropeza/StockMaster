@@ -117,3 +117,4 @@ end$$
 call spInsertRela();
 
 select * from tbl_relatorio;
+select * from tbl_fornecedor;
