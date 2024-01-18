@@ -1,6 +1,6 @@
 <h2>Cadastro de Fornecedores</h2>
 <br>
-<form style="max-width: 400px; margin: auto;" action="<?php echo url('perfil', 'index/save'); ?>?arq=FormFone" method="post">
+<form style="max-width: 400px; margin: auto;" action="<?php echo url('perfil', 'index/save'); ?>?arq=FormForne" method="post">
   <div class="mb-3">
     <label for="Nome" class="form-label">Cnpj</label>
     <input type="number" class="form-control" id="cnpj" name="cnpj">

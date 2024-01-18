@@ -21,7 +21,7 @@
                     <a href="<?php echo url('perfil', 'index'); ?>?arq=FormRela">Enviar Relatorio</a>
                 <?php } ?>
                 <br>
-                <a href="<?php echo url('perfil', 'index'); ?>?arq=FormFone">Cadastro Fornecedores</a>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=FormForne">Cadastro Fornecedores</a>
             </ul>
         </details>
 
