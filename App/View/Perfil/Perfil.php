@@ -12,6 +12,7 @@
             <summary>Funçoes Sistema</summary>
             <ul>
                 <a href="<?php echo url('perfil', 'index'); ?>?arq=Forneces">Consultar Fornecedores</a>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=Prods">Consultar Produtos</a>
                 <br>
                 <?php if ($acesso == 1) { ?>
                     <a href="<?php echo url('perfil', 'index'); ?>?arq=Relatorios">Consultar Relatorios</a>
@@ -21,6 +22,7 @@
                     <a href="<?php echo url('perfil', 'index'); ?>?arq=FormRela">Enviar Relatorio</a>
                 <?php } ?>
                 <br>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=FormProd">Cadastro Produto</a>
                 <a href="<?php echo url('perfil', 'index'); ?>?arq=FormForne">Cadastro Fornecedores</a>
             </ul>
         </details>

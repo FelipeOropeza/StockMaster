@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\FornecedorModel;
 use App\Model\LoginModel;
 use App\Model\RelatorioModel;
+use App\Model\ProdutoModel;
 use App\Services\Hash;
 use App\Services\Session;
 
@@ -38,6 +39,12 @@ class PerfilController extends Controller
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], $model, ['acesso' => $acesso]);
                     break;
 
+                case 'Prods':
+                    $model = new ProdutoModel();
+                    $model->listaProduto();
+                    $funcao = parent::funcoes('Perfil/' . $_GET['arq'], $model, ['acesso' => $acesso]);
+                    break;
+
                 case 'FormFunc':
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], null, ['acesso' => $acesso]);
                     break;
@@ -47,6 +54,10 @@ class PerfilController extends Controller
                     break;
 
                 case 'FormRela':
+                    $funcao = parent::funcoes('Perfil/' . $_GET['arq'], null, ['acesso' => $acesso]);
+                    break;
+
+                case 'FormProd':
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], null, ['acesso' => $acesso]);
                     break;
 

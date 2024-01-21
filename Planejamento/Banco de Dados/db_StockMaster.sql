@@ -118,3 +118,13 @@ call spInsertRela();
 
 select * from tbl_relatorio;
 select * from tbl_fornecedor;
+
+delimiter $$
+create procedure spInsertProd(vCod bigint, vNome varchar(200), vPreco decimal(8, 2), vQtd int)
+begin
+	if not exists(select CodigoBarras from tbl_produto where CodigoBarras = vCod) then
+		insert into tbl_produto values(vCod, vNome, vPreco, vQtd);
+	else
+		select 'Produto já existe';
+    end if;
+end$$

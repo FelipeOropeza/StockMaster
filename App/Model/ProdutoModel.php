@@ -23,4 +23,11 @@ class ProdutoModel extends Model
 
         return ($obj) ? $obj : new ProdutoModel;
     }
+
+    public function cadastroProd()
+    {
+        $dao = new ProdutoDAO();
+
+        $dao->insertProd($this->CodigoBarras, $this->Nome, $this->ValorUnitario, $this->Qtd);
+    }
 }

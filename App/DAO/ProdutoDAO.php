@@ -30,4 +30,15 @@ class ProdutoDAO extends DAO
 
         return $stmt->fetchObject("App\Model\ProdutoModel");
     }
+
+    public function insertProd($CodBarras, $Nome, $Preco, $Qtd)
+    {
+        $sql = "call spInsertProd(?, ?, ?, ?)";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $CodBarras);
+        $stmt->bindValue(2, $Nome);
+        $stmt->bindValue(3, $Preco);
+        $stmt->bindValue(4, $Qtd);
+        $stmt->execute();
+    }
 }
