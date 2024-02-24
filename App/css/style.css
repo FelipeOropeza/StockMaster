@@ -31,14 +31,17 @@
 }
 
 .top {
-  height: 250px; 
-  background-color: lightgreen;
+  height: 150px; 
+}
+
+.top h4{
+  text-align: center;
 }
 
 .bottom {
   margin-top: 50px;
   height: 250px; 
-  margin-bottom: 85px;
+  margin-bottom: 185px;
 }
 
 .bottom h4{
@@ -149,5 +152,13 @@ button:hover {
 }
 
 .div2 h3{
+  text-align: center;
+}
+
+#valor {
+  width: 42px;
+}
+
+.lead{
   text-align: center;
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\CarrinhoController;
 use App\Controller\HomeController;
 use App\Controller\LoginController;
 use App\Controller\PerfilController;
@@ -40,8 +41,16 @@ switch ($url) {
         ProdutoController::save();
         break;
 
+    case 'produto/addCarrinho':
+        ProdutoController::addCarrinho();
+        break;
+
     case 'relatorio/enviar':
         RelatorioController::enviar();
+        break;
+
+    case 'carrinho/index':
+        CarrinhoController::index();
         break;
     default:
         echo "Erro 404 - Página não encontrada";

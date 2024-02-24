@@ -37,10 +37,18 @@
         </div>
     </div>
     <div class="right">
-        <!-- Div na direita -->
         <div class="top">
-            <!-- Div superior na direita -->
-            Conteúdo da div superior na direita
+            <h4>Fazer pedido do produto</h4>
+            <br>
+            <form action="<?php echo url('produto', 'addCarrinho'); ?>" method="post">
+            <p class="lead">
+                <button type="button" onclick="DiminuirQtd()" id="min">-</button>
+                <input type="number" value="1" id="valor" name="valor" readonly>
+                <button type="button" onclick="AumentarQtd()" id="max">+</button>
+                <button type="submit">Enviar</button>
+            </p>
+            <br>
+            </form>
         </div>
         <div class="bottom">
             <h4>Relatório sobre o produto</h4>

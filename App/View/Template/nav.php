@@ -22,6 +22,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="<?php echo url('home', 'index') ?>">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="<?php echo url('carrinho', 'index') ?>">Carrinho</a>
+          </li>
         </ul>
         <form class="d-flex">
           <ul class="navbar-nav me-auto mb-3 mb-lg-0">
