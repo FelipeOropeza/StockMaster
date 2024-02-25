@@ -13,4 +13,9 @@ class CarrinhoController extends Controller
 
         parent::reader('Carrinho/Index');
     }
+
+    public static function addCarrinho()
+    {
+        var_dump($_POST['valor']);
+    }
 }

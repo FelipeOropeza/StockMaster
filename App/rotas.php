@@ -41,10 +41,6 @@ switch ($url) {
         ProdutoController::save();
         break;
 
-    case 'produto/addCarrinho':
-        ProdutoController::addCarrinho();
-        break;
-
     case 'relatorio/enviar':
         RelatorioController::enviar();
         break;
@@ -52,6 +48,11 @@ switch ($url) {
     case 'carrinho/index':
         CarrinhoController::index();
         break;
+
+    case 'carrinho/addCarrinho':
+        CarrinhoController::addCarrinho();
+        break;
+
     default:
         echo "Erro 404 - Página não encontrada";
         break;

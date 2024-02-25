@@ -28,9 +28,4 @@ class ProdutoController extends Controller
         $model->cadastroProd();
         var_dump($_POST);
     }
-
-    public static function addCarrinho()
-    {
-        var_dump($_POST['valor']);
-    }
 }
