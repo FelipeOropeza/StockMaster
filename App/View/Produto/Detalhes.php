@@ -40,7 +40,7 @@
         <div class="top">
             <h4>Fazer pedido do produto</h4>
             <br>
-            <form action="<?php echo url('carrinho', 'addCarrinho'); ?>" method="post">
+            <form action="<?php echo url('carrinho', 'addCarrinho'); ?>?cd=<?= $model->CodigoBarras; ?>" method="post">
             <p class="lead">
                 <button type="button" onclick="DiminuirQtd()" id="min">-</button>
                 <input type="number" value="1" id="valor" name="valor" readonly>
