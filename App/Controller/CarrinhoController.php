@@ -20,7 +20,7 @@ class CarrinhoController extends Controller
         parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho]);
     }
 
-    public static function addCarrinho()
+    public static function adicionar()
     {
         Session::start();
         $model = new CarrinhoModel();
@@ -29,11 +29,11 @@ class CarrinhoController extends Controller
         header('Location: /StockMaster/App/carrinho/index');
     }
 
-    public static function delete()
+    public static function deletar()
     {
         Session::start();
-        $posicao = $_POST['posicao'];
-        unset($_SESSION['carrinho'][$posicao]);
+        $model = new CarrinhoModel();
+        $model->deleteItem($_POST['posicao']);
 
         header('Location: /StockMaster/App/carrinho/index');
 

@@ -50,11 +50,11 @@ switch ($url) {
         break;
 
     case 'carrinho/delete':
-        CarrinhoController::delete();
+        CarrinhoController::deletar();
         break;
 
     case 'carrinho/addCarrinho':
-        CarrinhoController::addCarrinho();
+        CarrinhoController::adicionar();
         break;
 
     default:

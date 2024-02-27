@@ -12,4 +12,9 @@ class CarrinhoModel extends Model
             array_push($_SESSION['carrinho'], ['Quantidade' => $qtd, 'CodigoBarras' => $cod]);
         }
     }
+
+    public function deleteItem($pos)
+    {
+        unset($_SESSION['carrinho'][$pos]);
+    }
 }
