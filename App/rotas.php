@@ -49,6 +49,10 @@ switch ($url) {
         CarrinhoController::index();
         break;
 
+    case 'carrinho/delete':
+        CarrinhoController::delete();
+        break;
+
     case 'carrinho/addCarrinho':
         CarrinhoController::addCarrinho();
         break;

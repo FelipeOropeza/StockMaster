@@ -26,6 +26,5 @@ class ProdutoController extends Controller
         $model->ValorUnitario = $_POST['preco'];
         $model->Qtd = $_POST['quantidade'];
         $model->cadastroProd();
-        var_dump($_POST);
     }
 }
