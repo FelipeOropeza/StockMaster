@@ -43,7 +43,7 @@
             <form action="<?php echo url('carrinho', 'addCarrinho'); ?>?cd=<?= $model->CodigoBarras; ?>" method="post">
             <p class="lead">
                 <button type="button" onclick="DiminuirQtd()" id="min">-</button>
-                <input type="number" value="1" id="valor" name="valor" readonly>
+                <input type="number" value="1" id="qtd" name="qtd" readonly>
                 <button type="button" onclick="AumentarQtd()" id="max">+</button>
                 <button type="submit">Enviar</button>
             </p>

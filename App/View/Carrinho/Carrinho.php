@@ -4,16 +4,20 @@
     <div class="table-responsive">
         <table class="table table-bordered">
             <tr>
-                <th>Posição</th>
-                <th>Quantidade</th>
+                <th>Nome</th>
                 <th>CodigoBarras</th>
+                <th>Quantidade</th>
+                <th>ValorUnitario</th>
+                <th>ValorTotal</th>
                 <th>Ações</th>
             </tr>
             <?php foreach ($carrinho as $posicao => $item) : ?>
                 <tr>
-                    <td><?= $posicao; ?></td>
-                    <td><?= $item['Quantidade']; ?></td>
+                    <td><?= $item['Nome']; ?></td>
                     <td><?= $item['CodigoBarras']; ?></td>
+                    <td><?= $item['Quantidade']; ?></td>
+                    <td><?= $item['ValorUnitario']; ?></td>
+                    <td><?= $item['ValorTotal']; ?></td>
                     <td>
                         <form method="post" action="<?php echo url('carrinho', 'delete'); ?>">
                             <input type="hidden" name="posicao" value="<?= $posicao; ?>">
