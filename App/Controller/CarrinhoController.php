@@ -17,8 +17,9 @@ class CarrinhoController extends Controller
         if (!empty($_SESSION['carrinho'])) {
             $carrinho = $_SESSION['carrinho'];
         }
+        $total = array_sum (array_column($carrinho, 'ValorTotal') );
 
-        parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho]);
+        parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho, 'total' => $total]);
     }
 
     public static function adicionar()

@@ -1,5 +1,6 @@
 <title><?= $titulo_view ?></title>
 
+<div class='conteudo'>
 <?php if ($carrinho != []) { ?>
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -28,4 +29,6 @@
             <?php endforeach; ?>
         </table>
     </div>
+    <h3><?= $total ?></h3>
 <?php } ?>
+</div>
