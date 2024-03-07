@@ -18,8 +18,10 @@ class CarrinhoController extends Controller
             $carrinho = $_SESSION['carrinho'];
         }
         $total = array_sum (array_column($carrinho, 'ValorTotal') );
+        $totalQtd = array_sum (array_column($carrinho, 'Quantidade') );
 
-        parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho, 'total' => $total]);
+        parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho,
+         'total' => $total, 'totalQtd' => $totalQtd ] );
     }
 
     public static function adicionar()

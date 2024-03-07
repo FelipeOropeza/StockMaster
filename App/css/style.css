@@ -164,5 +164,27 @@ button:hover {
 }
 
 .conteudo{
-  height: 659px;
+  height: 649px;
+  margin-top: 10px;
+}
+
+.carrinho{
+  float: left;
+  margin-left: 100px;
+}
+
+.resumo{
+  height: 350px;
+  width: 350px;
+  margin-left: 50px;
+  float: inline-start;
+}
+
+.resumo h3{
+  text-align: center;
+}
+
+.button{
+  width: 200px;
+  margin-left: 100px;
 }
