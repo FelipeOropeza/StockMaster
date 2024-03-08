@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\CarrinhoModel;
+use App\Model\FornecedorModel;
 use App\Model\ProdutoModel;
 use App\Services\Session;
 
@@ -20,7 +21,10 @@ class CarrinhoController extends Controller
         $total = array_sum (array_column($carrinho, 'ValorTotal') );
         $totalQtd = array_sum (array_column($carrinho, 'Quantidade') );
 
-        parent::reader('Carrinho/Carrinho', 0 , null, ['carrinho' => $carrinho,
+        $model = new FornecedorModel();
+        $model->listaForne();
+
+        parent::reader('Carrinho/Carrinho', 0 , $model, ['carrinho' => $carrinho,
          'total' => $total, 'totalQtd' => $totalQtd ] );
     }
 

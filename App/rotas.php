@@ -3,6 +3,7 @@
 use App\Controller\CarrinhoController;
 use App\Controller\HomeController;
 use App\Controller\LoginController;
+use App\Controller\PedidoController;
 use App\Controller\PerfilController;
 use App\Controller\ProdutoController;
 use App\Controller\RelatorioController;
@@ -55,6 +56,10 @@ switch ($url) {
 
     case 'carrinho/addCarrinho':
         CarrinhoController::adicionar();
+        break;
+
+    case 'pedido/finaliza':
+        PedidoController::finalizar();
         break;
 
     default:
