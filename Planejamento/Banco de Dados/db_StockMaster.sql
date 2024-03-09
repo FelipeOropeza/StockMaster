@@ -154,8 +154,8 @@ call spInsertPedido(2, 12, 30.00, 2, 2);
 select * from tbl_compra;
 select * from tbl_pedidocomprar;
 
-delete from tbl_pedidocomprar where Notafiscal = 1;
-delete from tbl_compra where Notafiscal = 1;
+delete from tbl_pedidocomprar where Notafiscal = 25;
+delete from tbl_compra where Notafiscal = 25;
 
 
 
