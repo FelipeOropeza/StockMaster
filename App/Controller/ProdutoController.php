@@ -26,5 +26,7 @@ class ProdutoController extends Controller
         $model->ValorUnitario = $_POST['preco'];
         $model->Qtd = $_POST['quantidade'];
         $model->cadastroProd();
+
+        header('Location: /StockMaster/App/perfil/index?arq=' . $_GET['arq']);
     }
 }

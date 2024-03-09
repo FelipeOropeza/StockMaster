@@ -27,13 +27,14 @@ Telefone bigint unique
 create table tbl_compra(
 NotaFiscal int primary key,
 DataCompra date not null,
-ValorTotal decimal(8, 2) not null,
+ValorPed decimal(8, 2) not null,
 QtdTotal bigint not null,
 CodComp smallint,
 foreign key (CodComp) references tbl_fornecedor (Codigo)
 );
 
 create table tbl_pedidocomprar(
+ValorTotal decimal(5, 2) not null,tbl_compra
 ValorItem decimal(5, 2) not null,
 Qtd bigint not null,
 primary key(NotaFiscal, CodigoBarras),
@@ -128,3 +129,33 @@ begin
 		select 'Produto já existe';
     end if;
 end$$
+
+delimiter $$
+create procedure spInsertPedido(vNf int, vCodComp smallint, vValorItem decimal(5, 2), vCodBarras bigint, vQtd bigint)
+begin
+	set @DataCompra = current_date();
+    set @ValorTotal = vValorItem * vQtd;
+    set @CodForn = (select Codigo from tbl_fornecedor where Cnpj = vCodComp);
+    
+    if not exists(select NotaFiscal from tbl_Compra where vNf = NotaFiscal) then
+			insert into tbl_compra(NotaFiscal, DataCompra, ValorPed, QtdTotal, CodComp)
+				values(vNf, @DataCompra, @ValorTotal, vQtd, @CodForn);
+    end if;
+			insert into tbl_PedidoComprar(ValorTotal, ValorItem, Qtd, NotaFiscal, CodigoBarras)
+				values(@ValorTotal, vValorItem, vQtd, vNf, vCodBarras);
+			update tbl_compra set ValorPed = (select sum(ValorTotal) from tbl_PedidoComprar where NotaFiscal = vNf), QtdTotal = (select sum(Qtd) from tbl_PedidoComprar where NotaFiscal = vNf) where NotaFiscal = vNf;
+end$$
+
+call spInsertPedido(1, 12, 20.00, 1, 5);
+call spInsertPedido(1, 12, 30.00, 2, 2);
+call spInsertPedido(2, 12, 20.00, 1, 5);
+call spInsertPedido(2, 12, 30.00, 2, 2);
+
+select * from tbl_compra;
+select * from tbl_pedidocomprar;
+
+delete from tbl_pedidocomprar where Notafiscal = 1;
+delete from tbl_compra where Notafiscal = 1;
+
+
+

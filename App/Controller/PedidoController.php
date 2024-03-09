@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\PedidoModel;
 use App\Services\Session;
 
 class PedidoController extends Controller
@@ -10,8 +11,18 @@ class PedidoController extends Controller
     {   
         Session::start();
         parent::authentic();
+
+        if($_SESSION['carrinho'] == []){
+            header('Location: /StockMaster/App/home/index');    
+        }
         
-        echo $_POST['forn'];
-        var_dump($_SESSION['carrinho']);
+        $model = new PedidoModel;
+        $model->pedido = $_SESSION['carrinho'];
+        $model->cnpj = $_POST['forn'];
+        $model->addPedido();
+
+        $_SESSION['carrinho'] = [];
+
+        parent::reader('pedido/Finalizar', 0, null);
     }
 }
