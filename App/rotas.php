@@ -3,6 +3,7 @@
 use App\Controller\CarrinhoController;
 use App\Controller\HomeController;
 use App\Controller\LoginController;
+use App\Controller\PdfController;
 use App\Controller\PedidoController;
 use App\Controller\PerfilController;
 use App\Controller\ProdutoController;
@@ -60,6 +61,10 @@ switch ($url) {
 
     case 'pedido/finaliza':
         PedidoController::finalizar();
+        break;
+
+    case 'pdf/download':
+        PdfController::download();
         break;
 
     default:

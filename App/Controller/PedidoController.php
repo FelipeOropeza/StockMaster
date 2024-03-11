@@ -12,9 +12,9 @@ class PedidoController extends Controller
         Session::start();
         parent::authentic();
 
-        if($_SESSION['carrinho'] == []){
-            header('Location: /StockMaster/App/home/index');    
-        }
+        // if($_SESSION['carrinho'] == []){
+        //     header('Location: /StockMaster/App/home/index');    
+        // }
         
         $model = new PedidoModel;
         $model->pedido = $_SESSION['carrinho'];

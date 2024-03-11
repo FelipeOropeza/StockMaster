@@ -13,7 +13,7 @@ class PedidoDAO extends DAO
 
     public function insertPedido($dados = [], $codForne)
     {
-        $Nf = rand(1, 100);
+        $Nf = rand(1, 1000);
         foreach ($dados as $items) {
             $sql = "call spInsertPedido(?, ?, ?, ?, ?)";
             $stmt = $this->conexao->prepare($sql);
