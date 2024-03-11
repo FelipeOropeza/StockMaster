@@ -31,6 +31,7 @@ class CarrinhoController extends Controller
     public static function adicionar()
     {
         Session::start();
+        parent::authentic();
         $produto = new ProdutoModel();
         $produto = $produto->getById($_GET['cd']);
 
@@ -48,6 +49,7 @@ class CarrinhoController extends Controller
     public static function deletar()
     {
         Session::start();
+        parent::authentic();
         $model = new CarrinhoModel();
         $model->deleteItem($_POST['posicao']);
 

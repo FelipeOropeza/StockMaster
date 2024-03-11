@@ -71,6 +71,9 @@ class PerfilController extends Controller
 
     public static function save()
     {
+        Session::start();
+        parent::authentic();
+        
         switch ($_GET['arq']) {
             case 'FormFunc':
                 $model = new LoginModel();

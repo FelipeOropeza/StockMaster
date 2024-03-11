@@ -2,13 +2,16 @@
 
 namespace App\Controller;
 
+use App\Services\Session;
 use FPDF;
 
 class PdfController extends Controller
 {
     public static function download()
     {
-
+        Session::start();
+        parent::authentic();
+        
         $pdf = new FPDF();
         $pdf->AddPage();
         

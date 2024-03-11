@@ -3,11 +3,15 @@
 namespace App\Controller;
 
 use App\Model\RelatorioModel;
+use App\Services\Session;
 
 class RelatorioController extends Controller
 {
     public static function enviar()
     {
+        Session::start();
+        parent::authentic();
+        
         $model = new RelatorioModel();
 
         if (empty($_GET['cd'])) {

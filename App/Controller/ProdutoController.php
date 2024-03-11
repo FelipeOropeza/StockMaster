@@ -20,6 +20,9 @@ class ProdutoController extends Controller
 
     public static function save()
     {
+        Session::start();
+        parent::authentic();
+        
         $model = new ProdutoModel();
         $model->CodigoBarras = $_POST['codigo_barras'];
         $model->Nome = $_POST['nome'];
