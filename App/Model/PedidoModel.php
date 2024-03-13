@@ -12,4 +12,12 @@ class PedidoModel
         $dao = new PedidoDAO();
         $dao->insertPedido($this->pedido, $this->cnpj);
     }
+
+    public function ultimaNF()
+    {
+        $dao = new PedidoDAO();
+        $obj = $dao->selectNF();
+
+        return $obj;
+    }
 }

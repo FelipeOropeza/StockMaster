@@ -25,4 +25,13 @@ class PedidoDAO extends DAO
             $stmt->execute();
         }
     }
+
+    public function selectNF()
+    {
+        $sql = "SELECT NotaFiscal FROM tbl_compra ORDER BY DataCompra DESC LIMIT 1 ";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
