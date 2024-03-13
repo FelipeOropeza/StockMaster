@@ -14,7 +14,8 @@ class PdfController extends Controller
         parent::authentic();
         
         $model = new PedidoModel();
-        $model = $model->ultimaNF(); 
+        $model->Nf = $_SESSION['NF'];
+        $model = $model->selectPed(); 
 
         $pdf = new FPDF();
         $pdf->AddPage();

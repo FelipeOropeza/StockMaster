@@ -13,11 +13,11 @@ class PedidoDAO extends DAO
 
     public function insertPedido($dados = [], $codForne)
     {
-        $Nf = rand(1, 1000);
+        $_SESSION['NF'] = rand(1, 1000);
         foreach ($dados as $items) {
             $sql = "call spInsertPedido(?, ?, ?, ?, ?)";
             $stmt = $this->conexao->prepare($sql);
-            $stmt->bindValue(1, $Nf);
+            $stmt->bindValue(1, $_SESSION['NF']);
             $stmt->bindValue(2, $codForne);
             $stmt->bindValue(3, $items['ValorUnitario']);
             $stmt->bindValue(4, $items['CodigoBarras']);
@@ -26,12 +26,12 @@ class PedidoDAO extends DAO
         }
     }
 
-    public function selectNF()
+    public function selectViewPed($Nf)
     {
-        $sql = "SELECT NotaFiscal FROM tbl_compra ORDER BY DataCompra DESC LIMIT 1 ";
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->execute();
+        // $sql = "SELECT NotaFiscal FROM tbl_compra ORDER BY DataCompra DESC LIMIT 1 ";
+        // $stmt = $this->conexao->prepare($sql);
+        // $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

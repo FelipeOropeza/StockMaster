@@ -5,7 +5,7 @@ use App\DAO\PedidoDAO;
 
 class PedidoModel
 {
-    public $pedido = [], $cnpj;
+    public $pedido = [], $cnpj, $Nf;
 
     public function addPedido()
     {
@@ -13,10 +13,10 @@ class PedidoModel
         $dao->insertPedido($this->pedido, $this->cnpj);
     }
 
-    public function ultimaNF()
+    public function selectPed()
     {
         $dao = new PedidoDAO();
-        $obj = $dao->selectNF();
+        $obj = $dao->selectViewPed($this->Nf);
 
         return $obj;
     }
