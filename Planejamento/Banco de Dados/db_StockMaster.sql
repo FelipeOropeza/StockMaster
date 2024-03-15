@@ -157,5 +157,21 @@ select * from tbl_pedidocomprar;
 delete from tbl_pedidocomprar where Notafiscal = 25;
 delete from tbl_compra where Notafiscal = 25;
 
+select NotaFiscal from tbl_compra order by DataCompra desc limit 1;
 
+create view vwPedidoPdf as
+select
+	tbl_compra.NotaFiscal,
+    tbl_pedidocomprar.CodigoBarras,
+    tbl_produto.Nome,
+    tbl_pedidocomprar.Qtd,
+    tbl_pedidocomprar.ValorItem,
+	tbl_pedidocomprar.ValorTotal,
+	tbl_compra.ValorPed,
+    tbl_compra.DataCompra
+from tbl_compra
+inner join tbl_pedidocomprar on (tbl_compra.NotaFiscal = tbl_pedidocomprar.NotaFiscal)
+inner join tbl_produto on (tbl_pedidocomprar.CodigoBarras = tbl_produto.CodigoBarras);
+
+select * from vwPedidoPdf where NotaFiscal = 74;
 

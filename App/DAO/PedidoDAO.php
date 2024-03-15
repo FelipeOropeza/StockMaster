@@ -28,10 +28,11 @@ class PedidoDAO extends DAO
 
     public function selectViewPed($Nf)
     {
-        // $sql = "SELECT NotaFiscal FROM tbl_compra ORDER BY DataCompra DESC LIMIT 1 ";
-        // $stmt = $this->conexao->prepare($sql);
-        // $stmt->execute();
+        $sql = "SELECT * FROM vwPedidoPdf WHERE NotaFiscal = ? ";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $Nf);
+        $stmt->execute();
 
-        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
