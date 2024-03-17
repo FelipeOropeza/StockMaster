@@ -60,6 +60,12 @@ class PerfilController extends Controller
                 case 'FormProd':
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], null, ['acesso' => $acesso]);
                     break;
+                
+                case 'UpdateProd':
+                    $model = new ProdutoModel;
+                    $model = $model->getById($_GET['cd']);
+                    $funcao = parent::funcoes('Perfil/'. $_GET['arq'], $model, ['acesso' => $acesso]);
+                    break;
 
                 default:
                     echo "Erro 404 - Página não encontrada";

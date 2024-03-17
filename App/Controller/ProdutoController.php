@@ -32,4 +32,13 @@ class ProdutoController extends Controller
 
         header('Location: /StockMaster/App/perfil/index?arq=' . $_GET['arq']);
     }
+
+    public static function update()
+    {
+        Session::start();
+        parent::authentic();
+
+        $model = new ProdutoModel();
+        $model->atulizarProd();
+    }
 }

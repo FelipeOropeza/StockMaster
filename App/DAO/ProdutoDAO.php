@@ -41,4 +41,9 @@ class ProdutoDAO extends DAO
         $stmt->bindValue(4, $Qtd);
         $stmt->execute();
     }
+
+    public function updateProd()
+    {
+        return true;
+    }
 }

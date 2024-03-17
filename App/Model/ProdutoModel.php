@@ -30,4 +30,11 @@ class ProdutoModel extends Model
 
         $dao->insertProd($this->CodigoBarras, $this->Nome, $this->ValorUnitario, $this->Qtd);
     }
+
+    public function atulizarProd()
+    {
+        $dao = new ProdutoDAO();
+
+        $dao->updateProd();
+    }
 }

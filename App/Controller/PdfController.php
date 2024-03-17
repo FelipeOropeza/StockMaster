@@ -28,7 +28,7 @@ class PdfController extends Controller
 
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(0, 10, 'Funcionario: ' . $_SESSION['nome'], 0, 1);
-        $pdf->Cell(0, 10, 'Data: ' . $referencia['DataCompra'], 0, 1);
+        $pdf->Cell(0, 10, 'Data: ' . date("d/m/Y", strtotime($referencia['DataCompra'])), 0, 1);
         $pdf->Ln(10);
 
         $pdf->SetFont('Arial', 'B', 12);
