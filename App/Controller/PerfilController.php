@@ -28,6 +28,7 @@ class PerfilController extends Controller
         } else {
             switch ($_GET['arq']) {
                 case 'Relatorios':
+                    parent::adminfunc();
                     $model = new RelatorioModel();
                     $model->listaRela();
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], $model, ['acesso' => $acesso]);
@@ -46,6 +47,7 @@ class PerfilController extends Controller
                     break;
 
                 case 'FormFunc':
+                    parent::adminfunc();
                     $funcao = parent::funcoes('Perfil/' . $_GET['arq'], null, ['acesso' => $acesso]);
                     break;
 
@@ -62,6 +64,7 @@ class PerfilController extends Controller
                     break;
                 
                 case 'UpdateProd':
+                    parent::adminfunc();
                     $model = new ProdutoModel;
                     $model = $model->getById($_GET['cd']);
                     $funcao = parent::funcoes('Perfil/'. $_GET['arq'], $model, ['acesso' => $acesso]);

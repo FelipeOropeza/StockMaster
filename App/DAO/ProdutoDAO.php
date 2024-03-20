@@ -42,8 +42,21 @@ class ProdutoDAO extends DAO
         $stmt->execute();
     }
 
-    public function updateProd()
+    public function updateProd($CodBarras, $Nome, $Preco)
+    {   
+        $sql = "UPDATE tbl_produto SET Nome = ?, ValorUnitario = ? WHERE CodigoBarras = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $Nome);
+        $stmt->bindValue(2, $Preco);
+        $stmt->bindValue(3, $CodBarras);
+        $stmt->execute();
+    }
+
+    public function deleteProd($CodBarras)
     {
-        return true;
+        $sql = "DELETE FROM tbl_produto WHERE CodigoBarras = ?";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $CodBarras);
+        $stmt->execute();
     }
 }

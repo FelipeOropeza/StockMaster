@@ -30,6 +30,13 @@ abstract class Controller
         }
     }
 
+    protected static function adminfunc()
+    {
+        if ($_SESSION['acesso'] != 1){
+            return header('Location: /StockMaster/App/perfil/index?arq=Prods');
+        }
+    }
+
     protected static function funcoes($funcao, $model = null, $dados = array())
     {
         $arquivo_view = VIEWS . $funcao . ".php";

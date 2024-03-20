@@ -1,10 +1,6 @@
-<?php
-validaFunc($acesso);
-?>
-
 <h2>Atualizar Produto</h2>
 
-<form style="max-width: 400px; margin: auto;" action="<?php echo url('produto', 'update'); ?>" method="post">
+<form style="max-width: 400px; margin: auto;" action="<?php echo url('produto', 'update'); ?>?arq=Prods" method="post">
     <label for="codigo_barras">Código de Barras:</label>
     <input type="number" value="<?= $model->CodigoBarras ?>" id="codigo_barras" name="codigo_barras"><br>
 

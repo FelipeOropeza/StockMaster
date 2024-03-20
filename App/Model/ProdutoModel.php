@@ -35,6 +35,13 @@ class ProdutoModel extends Model
     {
         $dao = new ProdutoDAO();
 
-        $dao->updateProd();
+        $dao->updateProd($this->CodigoBarras, $this->Nome, $this->ValorUnitario);
+    }
+
+    public function excluirProd()
+    {
+        $dao = new ProdutoDAO();
+
+        $dao->deleteProd($this->CodigoBarras);
     }
 }

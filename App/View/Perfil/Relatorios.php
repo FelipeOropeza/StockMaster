@@ -1,7 +1,3 @@
-<?php
-validaFunc($acesso);
-?>
-
 <h2>Relatorios</h2>
 <br>
 <div class="table-responsive">

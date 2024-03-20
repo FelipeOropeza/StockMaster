@@ -37,8 +37,27 @@ class ProdutoController extends Controller
     {
         Session::start();
         parent::authentic();
+        parent::adminfunc();
 
         $model = new ProdutoModel();
+        $model->CodigoBarras = $_POST['codigo_barras'];
+        $model->Nome = $_POST['nome'];
+        $model->ValorUnitario = $_POST['preco'];
         $model->atulizarProd();
+
+        header('Location: /StockMaster/App/perfil/index?arq=' . $_GET['arq']);
+    }
+
+    public static function delete()
+    {
+        Session::start();
+        parent::authentic();
+        parent::adminfunc();
+
+        $model = new ProdutoModel();
+        $model->CodigoBarras = $_GET['cd'];
+        $model->excluirProd();
+
+        header('Location: /StockMaster/App/perfil/index?arq=' . $_GET['arq']);
     }
 }

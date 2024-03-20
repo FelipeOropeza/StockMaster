@@ -1,7 +1,3 @@
-<?php
-  validaFunc($acesso);
-?>
-
 <h2>Cadastro de Funcionario</h2>
 <br>
 <form style="max-width: 400px; margin: auto;" action="<?php echo url('perfil', 'index/save'); ?>?arq=FormFunc" method="post">

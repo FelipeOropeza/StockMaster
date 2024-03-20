@@ -47,6 +47,10 @@ switch ($url) {
         ProdutoController::update();
         break;
 
+    case 'produto/delete':
+        ProdutoController::delete();
+        break;
+
     case 'relatorio/enviar':
         RelatorioController::enviar();
         break;
