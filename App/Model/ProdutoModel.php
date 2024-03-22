@@ -8,11 +8,19 @@ class ProdutoModel extends Model
 {
     public $CodigoBarras, $Nome, $ValorUnitario, $Qtd;
 
-    public function listaProduto()
+    public function listaProduto($inicio, $limite)
     {
         $dao = new ProdutoDAO();
 
-        $this->rows = $dao->selectProd();
+        $this->rows = $dao->selectProd($inicio, $limite);
+    }
+
+    public function contProd()
+    {
+        $dao = new ProdutoDAO();
+        $obj = $dao->selectcountProd();
+
+        return $obj;
     }
 
     public function getById($id)

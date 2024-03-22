@@ -32,6 +32,20 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    <div class='paginacao'>
+            <a href="?arq=Prods&pagina=1">Primeira</a>
+            <?php if($pagina > 1): ?>
+                <a href="?arq=Prods&pagina=<?= $pagina-1 ?>"><<</a>
+            <?php endif; ?>
+
+            <?= $pagina ?>
+
+            <?php if($pagina < $paginas): ?>
+                <a href="?arq=Prods&pagina=<?= $pagina+1 ?>">>></a>
+            <?php endif; ?>
+
+            <a href="?arq=Prods&pagina=<?= $paginas ?>">Última</a>
+    </div>
 <?php } else { ?>
     <h3>Nenhum produto no momento</h3>
 <?php } ?>

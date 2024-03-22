@@ -12,7 +12,7 @@
             <summary>Funçoes Sistema</summary>
             <ul>
                 <a href="<?php echo url('perfil', 'index'); ?>?arq=Forneces">Consultar Fornecedores</a>
-                <a href="<?php echo url('perfil', 'index'); ?>?arq=Prods">Consultar Produtos</a>
+                <a href="<?php echo url('perfil', 'index'); ?>?arq=Prods&pagina=1">Consultar Produtos</a>
                 <br>
                 <?php if ($acesso == 1) { ?>
                     <a href="<?php echo url('perfil', 'index'); ?>?arq=Relatorios">Consultar Relatorios</a>

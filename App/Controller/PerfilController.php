@@ -42,8 +42,25 @@ class PerfilController extends Controller
 
                 case 'Prods':
                     $model = new ProdutoModel();
-                    $model->listaProduto();
-                    $funcao = parent::funcoes('Perfil/' . $_GET['arq'], $model, ['acesso' => $acesso]);
+
+                    if(isset($_GET['pagina'])) {
+                        $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+                    }
+                    if(empty($_GET['pagina'])){
+                        $pagina = 1;
+                    }
+
+                    $limite = 4;
+                    $inicio = ($pagina * $limite) - $limite;
+
+
+                    $model->listaProduto($inicio, $limite);
+                    $registros = $model->contProd();
+
+                    $paginas = ceil($registros['COUNT'] / $limite);
+
+                    $funcao = parent::funcoes('Perfil/' . $_GET['arq'], $model, ['acesso' => $acesso,
+                    'pagina' => $pagina, 'paginas' => $paginas]);
                     break;
 
                 case 'FormFunc':

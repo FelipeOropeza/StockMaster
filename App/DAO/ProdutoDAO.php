@@ -11,14 +11,27 @@ class ProdutoDAO extends DAO
         parent::__construct();
     }
 
-    public function selectProd()
+    public function selectProd($inicio, $limite)
     {
-        $sql = "SELECT * FROM tbl_produto";
+        $sql = "SELECT * FROM tbl_produto ORDER BY Nome LIMIT ?, ?";
 
         $stmt = $this->conexao->prepare($sql);
+        $stmt->bindParam(1, $inicio, PDO::PARAM_INT);
+        $stmt->bindParam(2, $limite, PDO::PARAM_INT);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function selectcountProd()
+    {
+        $sql = "SELECT COUNT(*) COUNT FROM tbl_produto";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        $contagem = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $contagem;
     }
 
     public function selectById($id)
