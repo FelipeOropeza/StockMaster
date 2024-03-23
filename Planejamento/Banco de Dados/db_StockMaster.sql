@@ -34,7 +34,7 @@ foreign key (CodComp) references tbl_fornecedor (Codigo)
 );
 
 create table tbl_pedidocomprar(
-ValorTotal decimal(5, 2) not null,tbl_compra
+ValorTotal decimal(5, 2) not null,
 ValorItem decimal(5, 2) not null,
 Qtd bigint not null,
 primary key(NotaFiscal, CodigoBarras),
@@ -144,6 +144,7 @@ begin
 			insert into tbl_PedidoComprar(ValorTotal, ValorItem, Qtd, NotaFiscal, CodigoBarras)
 				values(@ValorTotal, vValorItem, vQtd, vNf, vCodBarras);
 			update tbl_compra set ValorPed = (select sum(ValorTotal) from tbl_PedidoComprar where NotaFiscal = vNf), QtdTotal = (select sum(Qtd) from tbl_PedidoComprar where NotaFiscal = vNf) where NotaFiscal = vNf;
+            update tbl_produto set Qtd = Qtd + vQtd where CodigoBarras = vCodBarras;
 end$$
 
 call spInsertPedido(1, 12, 20.00, 1, 5);
