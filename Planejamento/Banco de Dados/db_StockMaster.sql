@@ -175,3 +175,5 @@ inner join tbl_produto on (tbl_pedidocomprar.CodigoBarras = tbl_produto.CodigoBa
 
 select * from vwPedidoPdf where NotaFiscal = 74;
 
+select * from tbl_produto order by Nome limit 0, 3;
+select count(*) count from tbl_produto;

@@ -13,7 +13,12 @@ class HomeController extends Controller
         parent::authentic();
 
         $model = new ProdutoModel();
-        $model->listaProduto();
+
+        $pagina = 1;
+        $limite = 12;
+        $inicio = ($pagina * $limite) - $limite;
+
+        $model->listaProduto($inicio, $limite);
 
         parent::reader('Home/Home', 0, $model);
     }

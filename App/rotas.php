@@ -7,6 +7,7 @@ use App\Controller\PdfController;
 use App\Controller\PedidoController;
 use App\Controller\PerfilController;
 use App\Controller\ProdutoController;
+use App\Controller\RegistroController;
 use App\Controller\RelatorioController;
 
 include 'Services/Utils.php';
@@ -73,6 +74,10 @@ switch ($url) {
 
     case 'pdf/download':
         PdfController::download();
+        break;
+
+    case 'registro/index':
+        RegistroController::index();
         break;
 
     default:
