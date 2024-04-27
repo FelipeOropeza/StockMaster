@@ -234,3 +234,32 @@ button:hover {
   border-radius: 5px;
   margin-top: 20px;
 }
+
+.containerReg {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.col {
+  flex: 1;
+  background-color: lightblue;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px; 
+  height: 100px;
+  margin-top: 10px;
+}
+
+.bottom .col {
+  background-color: lightgreen;
+  height: 300px;
+  margin-bottom: -2px;
+}

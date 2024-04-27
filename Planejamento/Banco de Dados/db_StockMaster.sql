@@ -101,7 +101,7 @@ end$$
 
 select * from tbl_login;
 
-insert into tbl_produto values (12345, 'Teste1', 12.00, 12);
+vwpedidopdfinsert into tbl_produto values (12345, 'Teste1', 12.00, 12);
 insert into tbl_produto values (12346, 'Teste2', 13.00, 22);
 insert into tbl_produto values (12347, 'Teste3', 14.00, 15);
 insert into tbl_produto values (12348, 'Teste4', 15.00, 32);
