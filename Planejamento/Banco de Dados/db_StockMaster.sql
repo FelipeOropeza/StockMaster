@@ -131,7 +131,7 @@ begin
 end$$
 
 delimiter $$
-create procedure spInsertPedido(vNf int, vCodComp smallint, vValorItem decimal(5, 2), vCodBarras bigint, vQtd bigint)
+create procedure spInsertPedido(vNf int, vCodComp bigint, vValorItem decimal(5, 2), vCodBarras bigint, vQtd bigint)
 begin
 	set @DataCompra = current_date();
     set @ValorTotal = vValorItem * vQtd;
